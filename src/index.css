@@ -12,3 +12,10 @@
   --color-text: #9f9f9f;
   --color-title: #403f3f;
 }
+
+a.active {
+  text-decoration: underline;
+}
+a.active {
+  background: rgb(246, 242, 242);
+}

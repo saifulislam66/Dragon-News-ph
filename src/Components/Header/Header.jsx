@@ -7,7 +7,7 @@ import Markquee from "../Markquee";
 function Header() {
   return (
     <div>
-      <div className="flex w-11/12 mx-auto items-center justify-center flex-col gap-3 py-4 ">
+      <div className="flex  mx-auto items-center justify-center flex-col gap-3 ">
         <img className="w-[330px]" src={logo} alt="" />
         <p className="text-gray-300 ">Journalism Without Fear or Favour</p>
         <p>{format(new Date(), "EEEE, do MMMM yyyy")}</p>
