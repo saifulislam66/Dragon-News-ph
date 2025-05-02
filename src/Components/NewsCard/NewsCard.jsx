@@ -1,8 +1,10 @@
 import React from "react";
 import { FaStar, FaEye, FaShareAlt, FaRegCommentDots } from "react-icons/fa";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
   const {
+    id,
     title,
     author,
     published_date,
@@ -50,10 +52,13 @@ const NewsCard = ({ news }) => {
       {/* Description */}
       <p className="text-sm text-gray-700">
         {details.slice(0, 200)}...
-        <span className="text-red-500 font-medium cursor-pointer">
+        <Link
+          to={`/news-details/${id}`}
+          className="text-red-500 font-medium cursor-pointer"
+        >
           {" "}
           Read More
-        </span>
+        </Link>
       </p>
 
       {/* Footer */}

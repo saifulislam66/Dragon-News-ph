@@ -24,7 +24,7 @@ function CategoriesNews() {
     <div className="flex flex-col gap-5 ">
       <h2>total post {filtaredNews.length}</h2>
       {filtaredNews.map((news) => (
-        <NewsCard news={news}></NewsCard>
+        <NewsCard key={news.id} news={news}></NewsCard>
       ))}
     </div>
   );

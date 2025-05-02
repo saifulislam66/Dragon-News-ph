@@ -6,8 +6,17 @@ import userimg from "../../assets/user.png";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 function Navbar() {
-  const dataaa = use(AuthContext);
-  console.log(dataaa);
+  const { user, singOutUser } = use(AuthContext);
+
+  const handleSingOut = () => {
+    singOutUser()
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="flex py-4 justify-between  mx-auto gap-4">
       <div></div>
@@ -18,12 +27,19 @@ function Navbar() {
       </div>
       <div className="flex items-center gap-4">
         <FaRegCircleUser size={30} />
-        <Link
-          to="/auth/login"
-          className="bg-gray-200 px-3 py-2 rounded-sm text-black "
-        >
-          Login
-        </Link>
+
+        {user ? (
+          <button onClick={handleSingOut} className="btn btn-info">
+            Sign Out
+          </button>
+        ) : (
+          <Link
+            to="/auth/login"
+            className="bg-gray-200 px-3 py-2 rounded-sm text-black "
+          >
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );
