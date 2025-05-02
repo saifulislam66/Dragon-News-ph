@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import Header from "../Components/Header/Header";
 import Categori from "../Components/Header/Categories/Categori";
 import { Outlet } from "react-router";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 function Home() {
   return (
@@ -70,6 +71,33 @@ function Home() {
               </svg>
               Login with Google
             </button>
+          </div>
+          {/* finde socials  */}
+          <div className="mt-5">
+            <h2 className="text-xl font-bold mb-4">Find Us On</h2>
+            <div className="w-full flex flex-col gap-2 ">
+              <a
+                href="#"
+                className=" flex items-center gap-3 rounded-sm border-1 border-gray-900 py-2 px-3 text-blue-600 hover:text-blue-800"
+              >
+                <FaFacebook />
+                Facebook
+              </a>
+              <a
+                href="#"
+                className="flex gap-3 items-center rounded-sm border-1 border-gray-900 py-2 px-3 text-pink-500 hover:text-pink-700"
+              >
+                <FaInstagram />
+                Instagram
+              </a>
+              <a
+                href="#"
+                className="flex gap-3 items-center  rounded-sm border-1 border-gray-900 py-2 px-3 text-blue-500 hover:text-blue-700"
+              >
+                <FaLinkedin />
+                Linkdin
+              </a>
+            </div>
           </div>
         </section>
       </main>
