@@ -1,10 +1,13 @@
-import React from "react";
-import { NavLink } from "react-router";
+import React, { use } from "react";
+import { Link, NavLink } from "react-router";
 import { FaRegCircleUser } from "react-icons/fa6";
 
 import userimg from "../../assets/user.png";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 function Navbar() {
+  const dataaa = use(AuthContext);
+  console.log(dataaa);
   return (
     <div className="flex py-4 justify-between  mx-auto gap-4">
       <div></div>
@@ -15,9 +18,12 @@ function Navbar() {
       </div>
       <div className="flex items-center gap-4">
         <FaRegCircleUser size={30} />
-        <button className="bg-gray-200 px-3 py-2 rounded-sm text-black ">
+        <Link
+          to="/auth/login"
+          className="bg-gray-200 px-3 py-2 rounded-sm text-black "
+        >
           Login
-        </button>
+        </Link>
       </div>
     </div>
   );
