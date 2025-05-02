@@ -10,6 +10,13 @@ function Login() {
 
     const email = e.target.email.value;
     const password = e.target.password.value;
+    signInUser(email, password)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div className="flex items-center justify-center h-[85vh]">
